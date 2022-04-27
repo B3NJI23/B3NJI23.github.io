@@ -42,14 +42,25 @@ body {
 .grid {
   position: absolute;
   z-index: 15;
-  left: 18.5%;
-  top: 5%;
+  left: 17.9%;
+  top: 3;
   display: grid;
-  grid-template-columns: 150px 150px;
-  grid-template-rows: 150px 150px;
-  background-color: white;
+  grid-template-columns: 1518px;
+  grid-template-rows: 300px;
+  background-color: gray;
   border-radius: 20px;
   border: 3px solid black;
+}
+
+#item-link {
+  text-decoration: none;
+  color: black;
+}
+
+img {
+  width: 300px;
+  height: 300px;
+  border-radius: 15px;
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Quicksand:wght@300&family=Roboto:wght@300&display=swap");
