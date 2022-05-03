@@ -63,4 +63,33 @@ img {
   border-radius: 15px;
 }
 
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Quicksand:wght@300&family=Roboto:wght@300&display=swap");
+.file-container {
+  width: 170px;
+  height: 440px;
+  background-color: white;
+  border: 5px lightgray solid;
+  position: relative;
+  left: 310px;
+}
+
+.file-list {
+  list-style-type: number;
+}
+
+.file {
+  padding-bottom: 25px;
+  padding-left: 5px;
+}
+
+.link {
+  text-decoration: none;
+  background-color: lightgray;
+  border: 2px gray solid;
+  padding: 3px;
+}
+
+.link:hover {
+  background-color: white;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Quicksand:wght@300&family=Roboto:wght@300&display=swap"); ;
