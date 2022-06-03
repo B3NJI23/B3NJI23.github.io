@@ -42,14 +42,11 @@ body {
 .grid {
   position: absolute;
   z-index: 15;
-  left: 17.9%;
+  left: 16.8%;
   top: 3;
   display: grid;
-  grid-template-columns: 1518px;
-  grid-template-rows: 300px;
-  background-color: gray;
-  border-radius: 20px;
-  border: 3px solid black;
+  grid-template-columns: 1600px;
+  grid-template-rows: 500px;
 }
 
 #item-link {
@@ -59,8 +56,16 @@ body {
 
 img {
   width: 300px;
-  height: 300px;
+  height: 280px;
   border-radius: 15px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  border: 3px black solid;
+}
+
+img:hover,
+img:active {
+  border: 3px white solid;
 }
 
 .file-container {
