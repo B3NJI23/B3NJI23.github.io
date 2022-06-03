@@ -1,6 +1,7 @@
 body {
   background-color: gray;
   font-family: "Roboto", sans-serif;
+  overflow-y: hidden;
 }
 
 .sidebar {
@@ -42,7 +43,7 @@ body {
 .grid {
   position: absolute;
   z-index: 15;
-  left: 16.8%;
+  left: 16.35%;
   top: 3;
   display: grid;
   grid-template-columns: 1600px;
