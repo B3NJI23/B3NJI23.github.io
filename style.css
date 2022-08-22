@@ -98,4 +98,30 @@ img:active {
   background-color: white;
 }
 
+.countdown-box {
+  width: 600px;
+  height: 130px;
+  border: 3.5px solid black;
+  position: relative;
+  left: 750px;
+  top: 320px;
+  box-shadow: 2px 3px 4px lightgray;
+}
+
+#countdown-zhongli {
+  width: 520px;
+  height: 85px;
+  position: relative;
+  left: 180px;
+  top: 17px;
+  font-size: 32px;
+}
+
+.countdown-header-1 {
+  position: relative;
+  left: 62px;
+  top: 25px;
+  font-size: 20px;
+}
+
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Quicksand:wght@300&family=Roboto:wght@300&display=swap"); ;
