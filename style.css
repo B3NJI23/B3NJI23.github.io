@@ -1,6 +1,7 @@
 body {
   overflow-x: hidden;
-  background-image: url(Images/Header.png);
+  background-image: url(Images/background.jpg);
+  transition: 0.5s;
 }
 
 body::-webkit-scrollbar-track
@@ -32,6 +33,21 @@ body::-webkit-scrollbar-thumb
 	position: relative;
 	top: 250px;
 	left: -8px;
+  opacity: 85%;
+}
+
+.myWork
+{
+	display: block;
+	background-color: white;
+	width: 1100px;
+	height: 700px;
+	position: relative;
+	top: 100px;
+  left: 400px;
+  border: solid 3px #f5f5f5;
+  box-shadow: #3c4043 5px 4px 6px;
+  border-radius: 24px;
 }
 
 /* The side navigation menu */
@@ -46,7 +62,7 @@ body::-webkit-scrollbar-thumb
   overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 60px; /* Place content 60px from the top */
   transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
-  background-color: #77b6bf;
+  background-color: #a6a6a6;
 }
 
 /* The navigation menu links */
@@ -163,8 +179,50 @@ body::-webkit-scrollbar-thumb
 
 #header {
   position: relative;
-  top: -30px;
+  top: -15px;
   font-size: 56px;
   text-align: center;
   font-family: 'Montserrat', sans-serif;
+}
+
+p {
+  font-size: 24px;
+  text-align: justify;
+  font-family: 'Montserrat', sans-serif;
+  position: relative;
+  padding-right: 40px;
+}
+
+.worklist {
+  text-align: center;
+  margin: 0, auto;
+}
+
+.python-logo, .js-logo, .cisco-logo {
+  width: 200px;
+}
+
+.work-logos {
+  padding: 80px;
+}
+
+.python-logo:hover{
+  transition: 0.7s;
+  background-image: linear-gradient(to bottom right, #417eb0, #ffdf5a);
+  border-radius: 24px;
+  padding: 15px;
+}
+
+.js-logo:hover{
+  transition: 0.7s;
+  background-color: #f7df1e;
+  border-radius: 24px;
+  padding: 15px;
+}
+
+.cisco-logo:hover{
+  transition: 0.7s;
+  box-shadow: #111 3px 3px 6px;
+  border-radius: 24px;
+  padding: 15px;
 }
