@@ -1,7 +1,7 @@
 body {
   overflow-x: hidden;
   background-image: url(Images/background.jpg);
-  transition: 0.5s;
+  font-family: 'Montserrat', sans-serif;
 }
 
 body::-webkit-scrollbar-track
@@ -31,8 +31,7 @@ body::-webkit-scrollbar-thumb
 	width: 1920px;
 	height: 450px;
 	position: relative;
-	top: 250px;
-	left: -8px;
+  top: 250px;
   opacity: 85%;
 }
 
@@ -73,7 +72,7 @@ body::-webkit-scrollbar-thumb
   font-size: 25px;
   color: #ededed;
   display: block;
-  transition: 0.3s;
+  transition: 0.5s;
 }
 
 /* When you mouse over the navigation links, change their color */
@@ -107,11 +106,17 @@ body::-webkit-scrollbar-thumb
   left: -16px;
 }
 
+#sidenavImg:hover {
+  background-color: #0d77d4;
+  border-radius: 12px;
+  transition: 0.8s;
+}
+
 /* CSS */
 .button-17 {
   align-items: center;
   appearance: none;
-  background-color: #fff;
+  background-color: #2e2e2e;
   border-style: none;
   box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
   box-sizing: border-box;
@@ -121,7 +126,6 @@ body::-webkit-scrollbar-thumb
   font-family: "Google Sans",Roboto,Arial,sans-serif;
   font-size: 14px;
   font-weight: 500;
-  height: 48px;
   justify-content: center;
   letter-spacing: .25px;
   line-height: normal;
@@ -140,10 +144,12 @@ body::-webkit-scrollbar-thumb
   top: 0px;
   left: 0px;
   transition: 0.5s;
+  height: 950px;
+  z-index: 1;
 }
 
 .button-17:hover {
-  background: #F6F9FE;
+  background: #cfcccc;
   color: #174ea6;
 }
 
@@ -193,6 +199,14 @@ p {
   padding-right: 40px;
 }
 
+.p-main {
+  font-size: 24px;
+  text-align: justify;
+  font-family: 'Montserrat', sans-serif;
+  position: relative;
+  margin-left: 50px;
+}
+
 .worklist {
   text-align: center;
   margin: 0, auto;
@@ -234,5 +248,24 @@ p {
   background-color: black;
   position: relative;
   bottom: 15px;
+}
 
+.python-work-logos {
+  width: 25px;
+  height: 25px;
+  padding-top: 30px;
+  padding-left: 25px;
+}
+
+.python-work-links {
+  color: white;
+  position: relative;
+  bottom: 9px;
+  left: 7px;
+}
+.python-work-links:hover {
+  color: lightblue;
+  transition: 0.6s;
+  padding: 5px;
+  font-size: 20px;
 }
