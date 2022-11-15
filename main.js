@@ -19,7 +19,7 @@ function validate() {
   var password = document.getElementById("passWord").value;
 
   if (username == "B3NJI" && password == "dev") {
-    window.open("https://b3nji23.github.io/about-me.html");
+    window.open("https://b3nji23.github.io/about-me.html", _self);
   } else {
     alert("Login Failed!");
   }
