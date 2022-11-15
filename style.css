@@ -447,7 +447,7 @@ p {
 #d-header {
   color: white;
   position: relative;
-  left: 890px;
+  left: 853px;
   top: 20px;
   font-size: 64px;
   z-index: 2;
@@ -460,8 +460,7 @@ p {
   top: 28px;
   right: 275px;
   z-index: 2;
-  border: #2e2e2e 5px solid;
-  left: 85px;
+  left: 60px;
 }
 
 .card-video-2 {
