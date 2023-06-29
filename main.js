@@ -14,16 +14,36 @@ function closeNav() {
   document.getElementById("sidenavBtn").style.display = "block";
 }
 
-function validate() {
-  var username = document.getElementById("userName").value;
-  var password = document.getElementById("passWord").value;
+function dropDownBox() {
+  var open = document.getElementsByClassName('alert')[0];
+  open.style.display = 'block';
 
-  const Password = "admin.dev";
-  const Username = "B3NJI";
+  const expanded = document.getElementsByClassName('alert')[0];
 
-  if (username == Username && password == Password) {
-    window.open("https://b3nji23.github.io/about-me.html");
-  } else {
-    alert("Login Failed!");
-  }
+  expanded.classList.toggle("alert-expanded");
 }
+
+function dropDownBoxClose() {
+  var closed = document.getElementsByClassName('alert-expanded')[0];
+
+  closed.style.display = 'none';
+}
+
+function calculator() {
+  const softPity = 80;
+  const hardPity = 90;
+
+  var userPity = document.getElementsByClassName('pity-checker')[0].value;
+
+  if (userPity > 0 && userPity < 90) {
+      document.getElementById('result').innerHTML = `Soft pity 5⭐: ${softPity - userPity} wish múlva.\nGarantált 5⭐: ${hardPity - userPity} wish múlva.`;
+  }
+
+  else {
+      document.getElementById('result').innerHTML = 'Hibás adat! Próbáld újra.';
+  }
+
+}
+
+const button = document.getElementsByClassName('primogem-resin-calculator')[0];
+button.addEventListener("click");

@@ -215,13 +215,14 @@ p {
 }
 
 .worklist {
-  text-align: center;
-  margin: 0, auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .python-logo,
 .js-logo,
-.cisco-logo {
+.cisco-logo,
+.primogem-logo {
   width: 200px;
 }
 
@@ -229,8 +230,13 @@ p {
   padding: 80px;
 }
 
+.primogem-resin-calculator {
+  background-color: white;
+  border: none
+}
+
 .python-logo:hover {
-  transition: 0.7s;
+  transition: 1s;
   background-image: linear-gradient(to bottom right, #417eb0, #ffdf5a);
   border-radius: 24px;
   padding: 15px;
@@ -241,6 +247,14 @@ p {
   background-color: #f7df1e;
   border-radius: 24px;
   padding: 15px;
+}
+
+.primogem-resin-calculator:hover {
+  transition: 0.7s;
+  border-radius: 24px;
+  padding: 15px;
+  background-image: linear-gradient(to bottom right, #4898f5, #e2cadf);
+  border: 5pt solid #edbddf;
 }
 
 .cisco-logo:hover {
@@ -277,6 +291,11 @@ p {
   transition: 0.6s;
   padding: 5px;
   font-size: 20px;
+}
+
+.logo-title {
+  color: white;
+  text-shadow: 2pt 2pt 2pt black;
 }
 
 .card {
@@ -471,4 +490,84 @@ p {
   right: 275px;
   z-index: 2;
   left: 60px;
+}
+
+/*Custom - Alert*/
+
+.alert {
+  position: absolute;
+  text-align: center;
+  z-index: 15;
+  width: 600px;
+  height: 400px;
+  top: -400px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #2b2b2b;
+  transition: top 1.5s ease-in-out;
+}
+
+.alert-expanded {
+  top: 50%;
+  box-shadow: 15px 15px 0px #1c1c1c;
+  border-radius: 15px;
+}
+
+.alert h1 {
+  color: white;
+  text-shadow: 2px 3px 2px #121212;
+}
+
+
+/*Custom - Alert END*/
+
+.pity-checker {
+  width: 220px;
+  height: 25px;
+
+  border: #4d4d4d 3pt solid;
+  border-radius: 6px;
+}
+
+.pity-checker:hover {
+  transition: 0.45s ease-in-out;
+  border: #3638b9 3pt solid;
+}
+
+.pity-checker-check {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+  width: 100px;
+  height: 45px;
+
+  background-color: #1d427d;
+
+  margin-top: 10px;
+
+  border: solid 2pt #333333;
+  border-radius: 10px;
+}
+
+.pity-checker-check:hover {
+  transition: 0.2s ease-in-out;
+  background-color: #225cba;
+  color: white;
+}
+
+.close-btn {
+  position: absolute;
+  left: 89%;
+  bottom: 82%;
+  color: white;
+  font-size: 48px;
+  background-color: #2b2b2b;
+  border: none;
+}
+
+#result {
+  text-align: center;
+  margin-left: 75px;
+  margin-right: 45px;
+  color: white;
+  text-shadow: 2px 2px 2px black;
 }

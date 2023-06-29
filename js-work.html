@@ -18,7 +18,7 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400&display=swap"
       rel="stylesheet"
     />
-    <title>B3NJI's Page - Home</title>
+    <title>B3NJI's Page - Work</title>
     <script src="main.js"></script>
   </head>
   <body>
@@ -35,34 +35,46 @@
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
         >&times;</a
       >
-      <a href="about-me.html">Home</a>
+      <a href="index.html">Home</a>
       <a href="Portfolio.html">Portfolio</a>
       <a href="My-Work.html">My Work</a>
       <a href="Contact-Me.html">Contact Me</a>
     </div>
-    <div id="main" class="main">
-      <h1 id="header">About me</h1>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
-        mollitia, molestiae quas vel sint commodi repudiandae consequuntur
-        voluptatum laborum numquam blanditiis harum quisquam eius sed odit
-        fugiat iusto fuga praesentium optio, eaque rerum! Provident similique
-        accusantium nemo autem. Veritatis obcaecati tenetur iure eius earum ut
-        molestias architecto voluptate aliquam nihil, eveniet aliquid culpa
-        officia aut! Impedit sit sunt quaerat, odit, tenetur error, harum
-        nesciunt ipsum debitis quas aliquid. Reprehenderit, quia. Quo neque
-        error repudiandae fuga? Ipsa laudantium molestias eos sapiente officiis
-        modi at sunt excepturi expedita sint? Sed quibusdam recusandae alias
-        error harum maxime adipisci amet laborum. Perspiciatis minima nesciunt
-        dolorem! Officiis iure rerum voluptates a cumque velit quibusdam sed
-        amet tempora. Sit laborum ab, eius fugit doloribus tenetur fugiat,
-        temporibus enim commodi iusto libero magni deleniti quod quam
-        consequuntur! Commodi minima excepturi repudiandae velit hic maxime
-        doloremque. Quaerat provident commodi consectetur veniam similique ad
-        earum omnis ipsum saepe, voluptas, hic voluptates pariatur est explicabo
-        fugiat, dolorum eligendi quam cupiditate excepturi mollitia maiores
-        labore
-      </p>
+    <div class="alert">
+      <h1>Pity Kalkulátor</h1>
+      <input
+        class="close-btn"
+        type="submit"
+        onclick="dropDownBoxClose()"
+        value="X"
+      />
+      <input
+        class="pity-checker"
+        type="number"
+        placeholder="Üsd be a jelenlegi pity-d!"
+      /><br />
+      <button class="pity-checker-check" onclick="calculator()">
+        Megnézem
+      </button>
+      <br />
+      <p id="result"></p>
+    </div>
+    <div id="main" class="myWork">
+      <h1 id="header">My JavaScript Apps</h1>
+      <table class="worklist">
+        <tr>
+          <td class="work-logos">
+            <button onclick="dropDownBox()" class="primogem-resin-calculator">
+              <img
+                src="Images/Work/primogem-logo.png"
+                alt="primogem-logo"
+                class="primogem-logo"
+              />
+              <h1 class="logo-title">Primogem Calculator</h1>
+            </button>
+          </td>
+        </tr>
+      </table>
     </div>
   </body>
 </html>
