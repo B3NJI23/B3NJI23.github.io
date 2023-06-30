@@ -38,11 +38,11 @@ function calculator() {
   var userPity = document.getElementsByClassName('pity-checker')[0].value;
 
   if (userPity > 0 && userPity < 90) {
-      document.getElementById('result').innerHTML = `Soft pity 5⭐: ${softPity - userPity} wish múlva.\nGarantált 5⭐: ${hardPity - userPity} wish múlva.`;
+    document.getElementById('result').innerHTML = `Soft pity 5⭐: ${softPity - userPity} wish múlva.\nGarantált 5⭐: ${hardPity - userPity} wish múlva.`;
   }
 
   else {
-      document.getElementById('result').innerHTML = 'Hibás adat! Próbáld újra.';
+    document.getElementById('result').innerHTML = 'Hibás adat! Próbáld újra.';
   }
 
 }
@@ -55,16 +55,16 @@ function generateHash() {
   let symbolsAndLetters = [];
   var hash = ''
 
-// Add symbols and letters
+  // Add symbols and letters
   for (let i = 33; i <= 126; i++) {
-      symbolsAndLetters.push(String.fromCharCode(i))
+    symbolsAndLetters.push(String.fromCharCode(i))
   }
 
   for (let j of symbolsAndLetters) {
-      hash += randomChoice(symbolsAndLetters)
-      if (hash.length == 16) {
-          break
-      }
+    hash += randomChoice(symbolsAndLetters)
+    if (hash.length == 16) {
+      break
+    }
   }
 
   return hash
@@ -76,6 +76,9 @@ function validate() {
   const usernameHash = generateHash()
   const passwordHash = generateHash()
 
+  const usernameHash2 = generateHash()
+  const passwordHash2 = generateHash()
+
   const usernameInput = document.getElementById('username')
   const passwordInput = document.getElementById('password')
 
@@ -84,8 +87,10 @@ function validate() {
 
   keys[usernameHash] = 'B3NJI'
   keys[passwordHash] = 'admin.dev'
+  keys[usernameHash2] = 'szeretlek'
+  keys[passwordHash2] = 'szeretlek'
 
-  if (inputtedUsername === keys[usernameHash] && inputtedPassword === keys[passwordHash]) {
+  if (inputtedUsername === keys[usernameHash] && inputtedPassword === keys[passwordHash] || inputtedUsername == keys[usernameHash2] && inputtedPassword == keys[passwordHash2]) {
     localStorage.setItem('loggedIn', 'true');
     alert('Successful login!');
     window.open('main.html', '_self');
@@ -101,7 +106,7 @@ if (loggedIn !== 'true' && !window.location.pathname.includes('index.html')) {
 }
 
 if (!window.location.href.includes('index.html')) {
-  window.addEventListener('unload', function() {
+  window.addEventListener('unload', function () {
     localStorage.setItem('loggedIn', 'false');
   });
 }
