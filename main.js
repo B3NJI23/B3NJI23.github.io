@@ -1,3 +1,5 @@
+let loggedIn = localStorage.getItem('loggedIn') || 'false';
+
 /* Set the width of the side navigation to 250px and the left margin of the page content to 250px and add a black background color to body */
 function openNav() {
   document.getElementById("mySidenav").style.width = "250px";
@@ -44,6 +46,62 @@ function calculator() {
   }
 
 }
+function randomChoice(array) {
+  const randomIndex = Math.floor(Math.random() * array.length);
+  return array[randomIndex];
+}
 
-const button = document.getElementsByClassName('primogem-resin-calculator')[0];
-button.addEventListener("click");
+function generateHash() {
+  let symbolsAndLetters = [];
+  var hash = ''
+
+// Add symbols and letters
+  for (let i = 33; i <= 126; i++) {
+      symbolsAndLetters.push(String.fromCharCode(i))
+  }
+
+  for (let j of symbolsAndLetters) {
+      hash += randomChoice(symbolsAndLetters)
+      if (hash.length == 16) {
+          break
+      }
+  }
+
+  return hash
+}
+
+function validate() {
+  var keys = {}
+
+  const usernameHash = generateHash()
+  const passwordHash = generateHash()
+
+  const usernameInput = document.getElementById('username')
+  const passwordInput = document.getElementById('password')
+
+  const inputtedUsername = usernameInput.value
+  const inputtedPassword = passwordInput.value
+
+  keys[usernameHash] = 'B3NJI'
+  keys[passwordHash] = 'admin.dev'
+
+  if (inputtedUsername === keys[usernameHash] && inputtedPassword === keys[passwordHash]) {
+    localStorage.setItem('loggedIn', 'true');
+    alert('Successful login!');
+    window.open('main.html', '_self');
+  } else {
+    alert('Wrong credentials!');
+    usernameInput.value = '';
+    passwordInput.value = '';
+  }
+}
+
+if (loggedIn !== 'true' && !window.location.pathname.includes('index.html')) {
+  window.location.replace('index.html');
+}
+
+if (!window.location.href.includes('index.html')) {
+  window.addEventListener('unload', function() {
+    localStorage.setItem('loggedIn', 'false');
+  });
+}
