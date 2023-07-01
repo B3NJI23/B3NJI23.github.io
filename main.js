@@ -71,7 +71,8 @@ function generateHash() {
 }
 
 function validate() {
-  var keys = {}
+  var user1 = {}
+  var user2 = {}
 
   const usernameHash = generateHash()
   const passwordHash = generateHash()
@@ -85,12 +86,12 @@ function validate() {
   const inputtedUsername = usernameInput.value
   const inputtedPassword = passwordInput.value
 
-  keys[usernameHash] = 'B3NJI'
-  keys[passwordHash] = 'admin.dev'
-  keys[usernameHash2] = 'szeretlek'
-  keys[passwordHash2] = 'szeretlek'
+  user1['username'] = 'B3NJI'
+  user1['password'] = 'admin.dev'
+  user2['username'] = 'szeretlek'
+  user2['password'] = 'szeretlek'
 
-  if (inputtedUsername === keys[usernameHash] && inputtedPassword === keys[passwordHash] || inputtedUsername == keys[usernameHash2] && inputtedPassword == keys[passwordHash2]) {
+  if (inputtedUsername === user1['username'] && inputtedPassword === user1['password'] || inputtedUsername == user2['username'] && inputtedPassword == user2[passwordHash2]) {
     localStorage.setItem('loggedIn', 'true');
     alert('Successful login!');
     window.open('main.html', '_self');
@@ -101,12 +102,17 @@ function validate() {
   }
 }
 
-if (loggedIn !== 'true' && !window.location.pathname.includes('index.html')) {
-  window.location.replace('index.html');
+function Redirect() {
+  const loggedIn = localStorage.getItem('loggedIn');
+  const currentPage = window.location.pathname;
+
+  if (loggedIn !== 'true' && currentPage !== '/index.html') {
+    window.location.href = 'index.html';
+  }
 }
 
-if (!window.location.href.includes('index.html')) {
-  window.addEventListener('unload', function () {
-    localStorage.setItem('loggedIn', 'false');
-  });
+function logOut() {
+  alert('Logged out.')
+  window.open('index.html', '_self')
+  localStorage.setItem('loggedIn', 'false');
 }
