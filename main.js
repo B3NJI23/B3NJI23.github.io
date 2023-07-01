@@ -91,7 +91,7 @@ function validate() {
   user2['username'] = 'szeretlek'
   user2['password'] = 'szeretlek'
 
-  if (inputtedUsername === user1['username'] && inputtedPassword === user1['password'] || inputtedUsername == user2['username'] && inputtedPassword == user2[passwordHash2]) {
+  if (inputtedUsername === user1['username'] && inputtedPassword === user2['password'] || inputtedUsername == user2['username'] && inputtedPassword == user2[passwordHash2]) {
     localStorage.setItem('loggedIn', 'true');
     alert('Successful login!');
     window.open('main.html', '_self');
