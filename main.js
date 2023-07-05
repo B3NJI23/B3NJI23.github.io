@@ -1,4 +1,8 @@
-let loggedIn = localStorage.getItem('loggedIn') || 'false';
+var users = {}
+var inputtedUsername
+
+users['Sisi'] = {'username': 'Sisi', 'password': 'szeretlek', 'loggedIn': false}
+users['B3NJI'] = {'username': 'B3NJI', 'password': 'admin.dev', 'loggedIn': false}
 
 /* Set the width of the side navigation to 250px and the left margin of the page content to 250px and add a black background color to body */
 function openNav() {
@@ -71,48 +75,37 @@ function generateHash() {
 }
 
 function validate() {
-  var user1 = {}
-  var user2 = {}
+  const usernameInput = document.getElementById('username');
+  const passwordInput = document.getElementById('password');
 
-  const usernameHash = generateHash()
-  const passwordHash = generateHash()
+  inputtedUsername = usernameInput.value; // Assign the value here
+  const inputtedPassword = passwordInput.value;
 
-  const usernameHash2 = generateHash()
-  const passwordHash2 = generateHash()
-
-  const usernameInput = document.getElementById('username')
-  const passwordInput = document.getElementById('password')
-
-  const inputtedUsername = usernameInput.value
-  const inputtedPassword = passwordInput.value
-
-  user1['username'] = 'B3NJI'
-  user1['password'] = 'admin.dev'
-  user2['username'] = 'szeretlek'
-  user2['password'] = 'szeretlek'
-
-  if (inputtedUsername === user1['username'] && inputtedPassword === user2['password'] || inputtedUsername == user2['username'] && inputtedPassword == user2[passwordHash2]) {
-    localStorage.setItem('loggedIn', 'true');
-    alert('Successful login!');
+  if (
+    (inputtedUsername === users['Sisi']['username'] && inputtedPassword === users['Sisi']['password']) ||
+    (inputtedUsername === users['B3NJI']['username'] && inputtedPassword === users['B3NJI']['password'])
+  ) {
+    users[inputtedUsername].loggedIn = true;
     window.open('main.html', '_self');
   } else {
-    alert('Wrong credentials!');
+    alert('Wrong Credentials!');
     usernameInput.value = '';
     passwordInput.value = '';
   }
 }
 
 function Redirect() {
-  const loggedIn = localStorage.getItem('loggedIn');
-  const currentPage = window.location.pathname;
-
-  if (loggedIn !== 'true' && currentPage !== '/index.html') {
-    window.location.href = 'index.html';
+  if (!users['Sisi'].loggedIn || !users['B3NJI'].loggedIn) {
+    window.open('index.html', '_self');
   }
 }
 
 function logOut() {
-  alert('Logged out.')
-  window.open('index.html', '_self')
-  localStorage.setItem('loggedIn', 'false');
+  alert('Logged out.');
+  users[inputtedUsername].loggedIn = false;
+  window.open('index.html', '_self');
+}
+
+function Register() {
+  // Your registration logic...
 }
