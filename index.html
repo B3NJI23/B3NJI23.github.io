@@ -2,40 +2,140 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="Images/logo.png" type="image/x-icon" />
-    <link rel="stylesheet" href="login.css" />
-    <script src="main.js"></script>
-    <title>Login</title>
+    <title>Coding Cheatsheet - Home</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="shortcut icon"
+      href="Images/python-logo.png"
+      type="image/x-icon"
+    />
   </head>
   <body>
-    <div class="login-container">
-      <div class="logo">
-        <img class="logo" src="Images/logo.png" alt="logo" />
+    <h1 class="cheatsheet-title">Python Cheatsheet</h1>
+
+    <div class="code-container">
+      <div class="code-embed small">
+        <h2 class="code-title">Fontos Adattípusok</h2>
+        <pre class="code">
+                <code>
+int() --> Egész szám | pl: 5
+float() --> Tizedes tört | pl: 1.2
+bool() --> Igaz vagy hamis | pl: True 
+str() --> szöveg | pl: "szó"
+list() --> adatok listája | pl: [1, 'kettő', False]
+                </code>
+            </pre>
       </div>
-      <div class="login">
-        <input
-          placeholder="Username"
-          type="text"
-          id="username"
-          name="username"
-          required
-        /><br />
-        <input
-          placeholder="Password"
-          type="password"
-          id="password"
-          name="password"
-          required
-        /><br />
-        <input
-          onclick="validate()"
-          type="submit"
-          value="Login"
-          id="loginButton"
-        />
+
+      <div class="gap"></div>
+
+      <div class="code-container">
+        <div class="code-embed small">
+          <h2 class="code-title">Operátorok</h2>
+          <pre class="code">
+                  <code>
+# Operátorok:
+
+ == Hasonlító jel
+ != Nem egyenlő jel
+
+ < kisebb mint
+ > nagyobb mint
+ <= kisebb vagy egyenlő mint
+ >= nagyobb vagy egyenlő mint
+
+ + összeadás
+ - kivonás
+ / osztás
+ * szorzás
+
+ ** négyzetre emelés
+ // kerekítő osztás
+ % maradéktalan osztás
+</code>
+              </pre>
+        </div>
+
+        <div class="gap"></div>
+
+        <div class="code-embed small">
+          <h2 class="code-title">For loop használata:</h2>
+          <pre class="code">
+                <code>
+# Számhoz kötött
+
+ahányszór lefusson a loop, pl: 2
+               ⬇
+for _ in range(2):
+    pass
+                    
+# Iterálás
+
+lista = [1, 2, 3]
+
+# Az "i" változó felveszi a lista elemeit egyesével, hogy mindegyiket lehessen módosítani egyszerre.
+
+for i in lista:
+    print(i)
+                </code>
+            </pre>
+        </div>
+      </div>
+
+      <div class="gap"></div>
+
+      <div class="code-container">
+        <div class="code-embed small">
+          <h2 class="code-title">IF használata:</h2>
+          <pre class="code">
+                <code>
+# Ha teljesül a megadott paraméter akkor teljesül a beleírt kód
+
+szam = 12
+
+if szam == 12:
+    print('A szám egyenlő 12-vel!')
+
+# Továbbá megnézhetünk több paramétert is, ha az első nem teljesül.
+
+szam = 24
+                    
+if szam == 12:
+    print('A szám egyenlő 12-vel!')
+elif szam == 24:
+    print('A szám egyenlő 24-el')
+
+# Ha egyik feltétel sem teljesül akkor az 'else' fog érvénybe lépni, aminek a használata a következő:
+
+szam = 36
+
+if szam == 12:
+    print('A szám egyenlő 12-vel!')
+elif szam == 24:
+    print('A szám egyenlő 24-el')
+else:
+    print('A szám nem egyenlő sem 12-vel, sem 24-el')
+
+                </code>
+            </pre>
+        </div>
       </div>
     </div>
+
+    <div class="gap"></div>
+
+      <div class="code-container">
+        <div class="code-embed small">
+          <h2 class="code-title">IF használata:</h2>
+          <pre class="code">
+                <code>
+                    
+                </code>
+            </pre>
+        </div>
+      </div>
+    </div>
+
   </body>
 </html>

@@ -1,601 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&family=Roboto&display=swap');
+
 body {
-  overflow-x: hidden;
-  background-image: url(Images/background.jpg);
-  font-family: "Montserrat", sans-serif;
+    background-color: #222222;
+    font-family: 'Roboto', sans-serif;
 }
 
-body::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-  border-radius: 10px;
-  background-color: #f5f5f5;
-}
-
-body::-webkit-scrollbar {
-  width: 12px;
-  background-color: #f5f5f5;
-}
-
-body::-webkit-scrollbar-thumb {
-  border-radius: 10px;
-  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-  background-color: #484a49;
-}
-
-.main {
-  display: block;
-  background-color: white;
-  width: 1920px;
-  height: 450px;
-  position: relative;
-  top: 250px;
-  opacity: 85%;
-}
-
-.myWork {
-  display: block;
-  background-color: white;
-  width: 1100px;
-  height: 700px;
-  position: relative;
-  top: 100px;
-  left: 400px;
-  border: solid 3px #f5f5f5;
-  box-shadow: #3c4043 5px 4px 6px;
-  border-radius: 24px;
-}
-
-/* The side navigation menu */
-.sidenav {
-  height: 100%; /* 100% Full-height */
-  width: 0; /* 0 width - change this with JavaScript */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Stay on top */
-  top: -5px; /* Stay at the top */
-  left: 0;
-  background-color: #111; /* Black*/
-  overflow-x: hidden; /* Disable horizontal scroll */
-  padding-top: 60px; /* Place content 60px from the top */
-  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
-  background-color: #a6a6a6;
-}
-
-/* The navigation menu links */
-.sidenav a {
-  font-family: "Courier New", Courier, monospace;
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #ededed;
-  display: block;
-  transition: 0.5s;
-}
-
-/* When you mouse over the navigation links, change their color */
-.sidenav a:hover {
-  color: #f1f1f1;
-}
-
-/* Position and style the close button (top right corner) */
-.sidenav .closebtn {
-  position: absolute;
-  top: 7px;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
-}
-
-/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
-#main {
-  transition: margin-left 0.5s;
-  padding: 20px;
-}
-
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-@media screen and (max-height: 450px) {
-  .sidenav {
-    padding-top: 15px;
-  }
-  .sidenav a {
-    font-size: 18px;
-  }
-}
-
-#sidenavImg {
-  position: relative;
-  left: -16px;
-}
-
-#sidenavImg:hover {
-  background-color: #0d77d4;
-  border-radius: 12px;
-  transition: 0.8s;
-}
-
-/* CSS */
-.button-17 {
-  align-items: center;
-  appearance: none;
-  background-color: #2e2e2e;
-  border-style: none;
-  box-shadow: rgba(0, 0, 0, 0.2) 0 3px 5px -1px,
-    rgba(0, 0, 0, 0.14) 0 6px 10px 0, rgba(0, 0, 0, 0.12) 0 1px 18px 0;
-  box-sizing: border-box;
-  color: #3c4043;
-  cursor: pointer;
-  fill: currentcolor;
-  font-family: "Google Sans", Roboto, Arial, sans-serif;
-  font-size: 14px;
-  font-weight: 500;
-  justify-content: center;
-  letter-spacing: 0.25px;
-  line-height: normal;
-  max-width: 100%;
-  overflow: visible;
-  padding: 2px 24px;
-  position: fixed;
-  text-align: center;
-  text-transform: none;
-  transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1),
-    opacity 15ms linear 30ms, transform 270ms cubic-bezier(0, 0, 0.2, 1) 0ms;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  width: 60px;
-  will-change: transform, opacity;
-  top: 0px;
-  left: 0px;
-  transition: 0.5s;
-  height: 950px;
-  z-index: 1;
-}
-
-.button-17:hover {
-  background: #cfcccc;
-  color: #174ea6;
-}
-
-.button-17:active {
-  box-shadow: 0 4px 4px 0 rgb(60 64 67 / 30%),
-    0 8px 12px 6px rgb(60 64 67 / 15%);
-  outline: none;
-}
-
-.button-17:focus {
-  outline: none;
-  border: 2px solid #4285f4;
-}
-
-.button-17:not(:disabled) {
-  box-shadow: rgba(60, 64, 67, 0.3) 0 1px 3px 0,
-    rgba(60, 64, 67, 0.15) 0 4px 8px 3px;
-}
-
-.button-17:not(:disabled):hover {
-  box-shadow: rgba(60, 64, 67, 0.3) 0 2px 3px 0,
-    rgba(60, 64, 67, 0.15) 0 6px 10px 4px;
-}
-
-.button-17:not(:disabled):focus {
-  box-shadow: rgba(60, 64, 67, 0.3) 0 1px 3px 0,
-    rgba(60, 64, 67, 0.15) 0 4px 8px 3px;
-}
-
-.button-17:not(:disabled):active {
-  box-shadow: rgba(60, 64, 67, 0.3) 0 4px 4px 0,
-    rgba(60, 64, 67, 0.15) 0 8px 12px 6px;
-}
-
-.button-17:disabled {
-  box-shadow: rgba(60, 64, 67, 0.3) 0 1px 3px 0,
-    rgba(60, 64, 67, 0.15) 0 4px 8px 3px;
-}
-
-#header {
-  position: relative;
-  top: -15px;
-  font-size: 56px;
-  text-align: center;
-  font-family: "Montserrat", sans-serif;
-}
-
-p {
-  font-size: 24px;
-  text-align: justify;
-  font-family: "Montserrat", sans-serif;
-  position: relative;
-  padding-right: 40px;
-}
-
-.p-main {
-  font-size: 24px;
-  text-align: justify;
-  font-family: "Montserrat", sans-serif;
-  position: relative;
-  margin-left: 50px;
-}
-
-.worklist {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.python-logo,
-.js-logo,
-.cisco-logo,
-.primogem-logo {
-  width: 200px;
-}
-
-.work-logos {
-  padding: 80px;
-}
-
-.primogem-resin-calculator {
-  background-color: white;
-  border: none
-}
-
-.python-logo:hover {
-  transition: 1s;
-  background-image: linear-gradient(to bottom right, #417eb0, #ffdf5a);
-  border-radius: 24px;
-  padding: 15px;
-}
-
-.js-logo:hover {
-  transition: 0.7s;
-  background-color: #f7df1e;
-  border-radius: 24px;
-  padding: 15px;
-}
-
-.primogem-resin-calculator:hover {
-  transition: 0.7s;
-  border-radius: 24px;
-  padding: 15px;
-  background-image: linear-gradient(to bottom right, #4898f5, #e2cadf);
-  border: 5pt solid #edbddf;
-}
-
-.cisco-logo:hover {
-  transition: 0.7s;
-  box-shadow: #111 3px 3px 6px;
-  border-radius: 24px;
-  padding: 15px;
-}
 
-.python-work {
-  border-radius: 24px;
-  width: 1100px;
-  height: 550px;
-  background-color: black;
-  position: relative;
-  bottom: 15px;
+.cheatsheet-title {
+    font-family: 'Roboto', sans-serif; /* You can use the Roboto font for the title */
+    font-size: 36px; /* Adjust the font size */
+    color: white; /* White text color */
+    text-align: center; /* Center the title */
+    margin-top: 40px; /* Add some space at the top */
+    margin-bottom: 20px; /* Add some space at the bottom */
+    text-shadow:#444444 2px 2px 2px;
 }
 
-.python-work-logos {
-  width: 25px;
-  height: 25px;
-  padding-top: 30px;
-  padding-left: 25px;
+/* Assuming you have linked the Fira Code font in your HTML */
+.code-container {
+    text-align: center;
 }
 
-.python-work-links {
-  color: white;
-  position: relative;
-  bottom: 9px;
-  left: 7px;
-}
-.python-work-links:hover {
-  color: lightblue;
-  transition: 0.6s;
-  padding: 5px;
-  font-size: 20px;
-}
-
-.logo-title {
-  color: white;
-  text-shadow: 2pt 2pt 2pt black;
-}
-
-.card {
-  display: block;
-  position: absolute;
-  width: 260px;
-  height: 250px;
-  background-color: #616161;
-
-  border-top-left-radius: 16px;
-  border-top-right-radius: 16px;
-  border-bottom-left-radius: 12px;
-  border-bottom-right-radius: 12px;
-
-  left: 50px;
-  top: 135px;
-
-  box-shadow: #2e2e2e 3px 2px 8px;
-  z-index: 1;
-}
-
-.card-2 {
-  display: block;
-  position: absolute;
-  width: 260px;
-  height: 250px;
-  background-color: #616161;
-
-  border-top-left-radius: 16px;
-  border-top-right-radius: 16px;
-  border-bottom-left-radius: 12px;
-  border-bottom-right-radius: 12px;
-
-  left: 330px;
-  top: 135px;
-
-  box-shadow: #2e2e2e 3px 2px 8px;
-  z-index: 1;
-}
-
-.card-3 {
-  display: block;
-  position: absolute;
-  width: 260px;
-  height: 250px;
-  background-color: #616161;
-
-  border-top-left-radius: 16px;
-  border-top-right-radius: 16px;
-  border-bottom-left-radius: 12px;
-  border-bottom-right-radius: 12px;
-
-  left: 610px;
-  top: 135px;
-
-  box-shadow: #2e2e2e 3px 2px 8px;
-  z-index: 1;
-}
-
-.card-4 {
-  display: block;
-  position: absolute;
-  width: 260px;
-  height: 250px;
-  background-color: #616161;
-
-  border-top-left-radius: 16px;
-  border-top-right-radius: 16px;
-  border-bottom-left-radius: 12px;
-  border-bottom-right-radius: 12px;
-
-  left: 330px;
-  top: 450px;
-
-  box-shadow: #2e2e2e 3px 2px 8px;
-  z-index: 1;
-}
-
-.card-5 {
-  display: block;
-  position: absolute;
-  width: 260px;
-  height: 250px;
-  background-color: #616161;
-
-  border-top-left-radius: 16px;
-  border-top-right-radius: 16px;
-  border-bottom-left-radius: 12px;
-  border-bottom-right-radius: 12px;
-
-  left: 50px;
-  top: 450px;
-
-  box-shadow: #2e2e2e 3px 2px 8px;
-  z-index: 1;
-}
-
-.card-6 {
-  display: block;
-  position: absolute;
-  width: 260px;
-  height: 250px;
-  background-color: #616161;
-
-  border-top-left-radius: 16px;
-  border-top-right-radius: 16px;
-  border-bottom-left-radius: 12px;
-  border-bottom-right-radius: 12px;
-
-  left: 610px;
-  top: 450px;
-
-  box-shadow: #2e2e2e 3px 2px 8px;
-  z-index: 1;
-}
-
-.d-cards {
-  background-color: #444444;
-  position: relative;
-  width: 900px;
-  height: 800px;
-  border-radius: 24px;
-  margin-left: auto;
-  margin-right: auto;
-  bottom: 120px;
-  z-index: 1;
-}
-
-.card-header {
-  position: relative;
-  color: white;
-  text-shadow: #616161 2px 2px 8px;
-  font-size: 25px;
-  margin-left: 15px;
-  border-left: #f1f1f1 5px solid;
-  padding-left: 10px;
-  border-radius: 4px;
-  top: 20px;
-}
-
-.card-header-2 {
-  position: relative;
-  color: white;
-  text-shadow: #616161 2px 2px 8px;
-  font-size: 25px;
-  margin-left: 9px;
-  border-left: #f1f1f1 5px solid;
-  padding-left: 10px;
-  border-radius: 4px;
-  top: 20px;
-}
-
-.card-header-4 {
-  position: relative;
-  color: white;
-  text-shadow: #616161 2px 2px 8px;
-  font-size: 25px;
-  margin-left: 7px;
-  border-left: #f1f1f1 5px solid;
-  padding-left: 10px;
-  border-radius: 4px;
-  top: 20px;
-}
-.downloads-body {
-  overflow: hidden;
-}
-
-#d-header {
-  color: white;
-  position: relative;
-  left: 853px;
-  top: 20px;
-  font-size: 64px;
-  z-index: 2;
-}
-
-.card-video {
-  position: relative;
-  width: fit-content;
-  height: 150px;
-  top: 28px;
-  right: 275px;
-  z-index: 2;
-  left: 60px;
-}
-
-.card-video-2 {
-  position: relative;
-  width: fit-content;
-  height: 150px;
-  top: 28px;
-  right: 275px;
-  z-index: 2;
-  left: 60px;
-}
+.code-embed {
+    font-family: 'Fira Code', monospace;
+    background-color: #1e1e1e;
+    color: #d4d4d4;
+    width: 40%; /* Adjusted width to make embeds smaller */
+    margin: 0 5px; /* Reduced margin for spacing */
+    padding: 15px; /* Adjusted padding */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 
-/*Custom - Alert*/
-
-.alert {
-  position: absolute;
-  text-align: center;
-  z-index: 15;
-  width: 600px;
-  height: 400px;
-  top: -400px;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #2b2b2b;
-  transition: top 1.5s ease-in-out;
-}
-
-.alert-expanded {
-  top: 50%;
-  box-shadow: 15px 15px 0px #1c1c1c;
-  border-radius: 15px;
-}
-
-.alert h1 {
-  color: white;
-  text-shadow: 2px 3px 2px #121212;
-}
-
-
-/*Custom - Alert END*/
-
-.pity-checker {
-  width: 220px;
-  height: 25px;
-
-  border: #4d4d4d 3pt solid;
-  border-radius: 6px;
-}
-
-.pity-checker:hover {
-  transition: 0.45s ease-in-out;
-  border: #3638b9 3pt solid;
 }
 
-.pity-checker-check {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-
-  width: 100px;
-  height: 45px;
-
-  background-color: #1d427d;
-
-  margin-top: 10px;
-
-  border: solid 2pt #333333;
-  border-radius: 10px;
+.gap {
+    width: 10px; /* Adjusted gap width */
 }
 
-.pity-checker-check:hover {
-  transition: 0.2s ease-in-out;
-  background-color: #225cba;
-  color: white;
+.code-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
 }
 
-.close-btn {
-  position: absolute;
-  left: 89%;
-  bottom: 82%;
-  color: white;
-  font-size: 48px;
-  background-color: #2b2b2b;
-  border: none;
+.language {
+    color: #569cd6; /* Accent color for language */
 }
 
-#result {
-  text-align: center;
-  margin-left: 75px;
-  margin-right: 45px;
-  color: white;
-  text-shadow: 2px 2px 2px black;
+.code-title {
+    font-family: 'Roboto', sans-serif; /* Use the Roboto font for titles */
+    font-size: 24px; /* Adjust the font size */
+    color: #569cd6; /* Accent color for titles */
+    margin-bottom: 10px; /* Add some space at the bottom */
 }
 
-.logout-btn {
-  width: 100px;
-  height: 30px;
-  color: white;
-  text-shadow: 2px 2px 1px black;
-  position: absolute;
-  top: 87.5%;
-  left: 25%;
-  text-align: center;
-  border-radius: 15px;
-  background-color: #2e2e2e;
+/* Style for the small code embeds */
+.code-embed.small {
+    width: 80%; /* Adjusted width to span the full width */
+    padding: 10px;
+    margin: 0 auto;
+    margin-bottom: 20px; /* Added margin for spacing between code blocks */
+    box-sizing: border-box; /* Include padding and borders in width calculation */
 }
 
-.logout-btn:hover {
-  transition: 1s;
-  background-color: #8c8c8c;
-  border: solid 2px #2e2e2e;
+/* Updated style for the code block */
+.code {
+    font-family: 'Fira Code', monospace;
+    background-color: #444444; /* Dark background color */
+    color: white; /* White text color */
+    padding: 10px;
+    border-radius: 4px;
+    overflow: auto;
+    text-align: left !important;
+    font-size: 18px; /* Set text alignment to left */
 }
+  
+  /* Updated style for the code block */
 
-.uncopyable {
-  user-select: none;
-  -moz-user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  pointer-events: none;
-}
+/* Updated style for the code block */
 
+/* Syntax highlighting styles can be added here */
