@@ -3,16 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Coding Cheatsheet - Home</title>
+    <title>Coding Cheatsheet - Python Cheatsheet</title>
     <link rel="stylesheet" href="style.css" />
     <link
       rel="shortcut icon"
       href="Images/python-logo.png"
       type="image/x-icon"
     />
+    <script src="main.js"></script>
   </head>
   <body>
+
     <h1 class="cheatsheet-title">Python Cheatsheet</h1>
+
+    <nav>
+        <ul><li><a href="#alapvizsga">Python Példa Letöltés</a><img src="Images/python-logo.png" alt="python-logo" class="small-logo"></li></ul>
+        <ul><li><a href="index.html">Python Cheatsheet</a><img src="Images/python-logo.png" alt="python-logo" class="small-logo"></li></ul>
+        <ul><li><a href="cisco.html">Cisco Cheatsheet</a><img src="Images/cisco-logo.png" alt="cisco-logo" class="small-logo"></li></ul>
+    </nav>
 
     <div class="code-container">
       <div class="code-embed small">
@@ -127,15 +135,180 @@ else:
 
       <div class="code-container">
         <div class="code-embed small">
-          <h2 class="code-title">IF használata:</h2>
+          <h2 class="code-title">Fájl beolvasás alapjai:</h2>
           <pre class="code">
                 <code>
-                    
+
+#Context Manager használata:
+
+#Fájl megnyitása:
+
+with open(fájlnév: str, mode: str) as file:
+
+#Fájl beolvasás soronként:
+
+with open(fájlnév: str, mode: str) as file:
+for i in file:
+    print(i.strip())
+
+#Fájl sorainak szétszedés listává:
+
+elvalaszto = tetszőleges elválasztó karakter
+
+with open(fájlnév: str, mode: str) as file:
+for i in file:
+    print(i.strip().split(elvalaszto))
+
                 </code>
             </pre>
         </div>
       </div>
     </div>
+
+    <div class="gap"></div>
+
+      <div class="code-container">
+        <div class="code-embed small">
+          <h2 class="code-title">Class-ek használata:</h2>
+          <pre class="code">
+                <code>
+
+#Class-ek használata:
+
+#Class fogalma: A class egy object (tárgy), amely képes eltárolni különböző adatokat.
+
+#Class létrehozása:
+
+class [saját név]:
+    def __init__(self, [saját változók vesszővel elválasztva]):
+        self.sajátváltozó = sajátváltozó
+        és így tovább minden egyes változóval...
+
+#Tipp: A class-eket akár külön .py file-ban is tárolhatod és később be importálhatod a fő python fájlodba.
+
+#Erre egy példa:
+
+randomclassnév.py:
+
+    class hangok:
+        def __init__(self, hangtipus, decibel, melyseg, frekvencia):
+            self.hangtipus = hangtipus
+            self.decibel = decibel
+            self.melyseg = melyseg
+            self.frekvencia = frekvencia
+
+főpythonfile.py
+
+from randomclassnév import hangok
+
+#És már használhatod is!
+
+hangok()
+                </code>
+            </pre>
+        </div>
+      </div>
+    </div>
+
+    <div class="gap"></div>
+
+      <div class="code-container">
+        <div class="code-embed small">
+          <h2 class="code-title">Class-ek használta, ismerete, importálása:</h2>
+          <pre class="code">
+                <code>
+
+#Class-ek használata:
+
+#Class fogalma: A class egy object (tárgy), amely képes eltárolni különböző adatokat.
+
+#Class létrehozása:
+
+class [saját név]:
+    def __init__(self, [saját változók vesszővel elválasztva]):
+        self.sajátváltozó = sajátváltozó
+        és így tovább minden egyes változóval...
+
+#Tipp: A class-eket akár külön .py file-ban is tárolhatod és később be importálhatod a fő python fájlodba.
+
+#Erre egy példa:
+
+randomclassnév.py:
+
+    class hangok:
+        def __init__(self, hangtipus, decibel, melyseg, frekvencia):
+            self.hangtipus = hangtipus
+            self.decibel = decibel
+            self.melyseg = melyseg
+            self.frekvencia = frekvencia
+
+főpythonfile.py
+
+from randomclassnév import hangok
+
+#És már használhatod is!
+
+hangok()
+                </code>
+            </pre>
+        </div>
+      </div>
+    </div>
+
+    <div class="gap"></div>
+
+      <div class="code-container">
+        <div class="code-embed small">
+          <h2 class="code-title">Haladó fájlbeolvasás:</h2>
+          <pre class="code">
+                <code>
+
+elvalaszto = tetszőleges elválasztó karakter amivel elvannak választva a file-ban az adatok
+
+#Tipp --> Figyelj oda a space-ekre!!!!
+
+#Készits listákat a class-nek és a beolvasott adatoknak:
+
+data = []
+tetszőlegesgyűjtőnév = []
+
+with open(fájlnév: str, mode: str) as file:
+for i in file:
+    data.append(i.strip().split(elvalaszto: pl --> ';'))
+    if len(data) == tetszőleges beolvsaott érték (általában: 1, ha több sor van akkor több.):
+        hangtipus, decibel, melyseg, frekvencia = data[0]
+
+        tetszolegesnév = hangok(
+            hangtipus = hangtipus, #Használj a végén vesszőket, ha több van!!!
+            decibel = float(decibel), #Ha kell alakítsd át a megfelelő adattípússá.
+            melyseg = int(melyseg)
+            frekvencia = float(frekvencia)
+        )
+
+        tetszőlegesgyűjtőnév.append()
+        data = [] # Beolvasott fájlok törlése
+
+    #Ahhoz, hogy ezeket a beolvasott adatokat elérd elég, csak a kezdetben létrehozott listán át iterálni.
+    # For loop használatával:
+
+    #Példa:
+
+    for i in tetszőlegesgyűjtőnév:
+        print(i.hangtipus, i.decibel, i.melyseg, i.frekvencia)
+
+                </code>
+            </pre>
+        </div>
+      </div>
+    </div>
+
+    <p class="link"><a id="alapvizsga" href="Python/pelda.zip" download>Példa alapvizsga letöltése</a></p>
+
+    <footer>
+        <h3>További fontos infók / linkek: </h3>
+        <p>ChatGPT: <a href="https://chat.openai.com/", target="_blank">https://chat.openai.com/</a></p>
+        <p>learnpython.org: <a href="https://www.learnpython.org/" target="_blank">https://www.learnpython.org/</a></p>
+    </footer>
 
   </body>
 </html>

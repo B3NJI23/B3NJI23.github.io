@@ -3,6 +3,8 @@
 body {
     background-color: #222222;
     font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 
@@ -19,18 +21,6 @@ body {
 /* Assuming you have linked the Fira Code font in your HTML */
 .code-container {
     text-align: center;
-}
-
-.code-embed {
-    font-family: 'Fira Code', monospace;
-    background-color: #1e1e1e;
-    color: #d4d4d4;
-    width: 40%; /* Adjusted width to make embeds smaller */
-    margin: 0 5px; /* Reduced margin for spacing */
-    padding: 15px; /* Adjusted padding */
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-
 }
 
 .gap {
@@ -57,7 +47,7 @@ body {
 
 /* Style for the small code embeds */
 .code-embed.small {
-    width: 80%; /* Adjusted width to span the full width */
+    width: 65%; /* Adjusted width to span the full width */
     padding: 10px;
     margin: 0 auto;
     margin-bottom: 20px; /* Added margin for spacing between code blocks */
@@ -76,8 +66,88 @@ body {
     font-size: 18px; /* Set text alignment to left */
 }
   
-  /* Updated style for the code block */
+footer {
+    width: 1000px;
+    height: 120px;
 
-/* Updated style for the code block */
+    margin: 0 auto;
 
-/* Syntax highlighting styles can be added here */
+    border-radius: 15px;
+
+    margin-bottom: 25px;
+
+    display: block;
+
+    background-color: #444444;
+}
+
+footer h3 {
+    color: White;
+    position: relative;
+    top: 10px;
+    left: 10px;
+}
+
+footer p {
+    color: White;
+    position: relative;
+    top: 12px;
+    left: 10px;
+}
+
+nav ul {
+    color: white;
+    list-style-type: none;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 32px;
+    position: relative;
+    left: -30px;
+    top: -70px;
+
+    padding: 5px;
+    background-color: #444444;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+@keyframes anim {
+        
+    0% {
+        font-size: 32px;
+    }
+
+    100% {
+        font-size: 36px;
+    }
+}
+
+nav ul li a:hover {
+    animation: anim ease-in-out 0.7s forwards;
+    background-color: #333333;
+
+}
+
+.small-logo {
+    position: relative;
+    top: -52px;
+    width: 3.5%;
+    height: 3.5%;
+}
+
+.link {
+    position: relative;
+    left: 44%;
+    bottom: 15px;
+}
+
+.link a {
+    text-decoration: none;
+    color: white;
+    background-color: #444555;
+    padding: 7px;
+    border-radius: 3px;
+}

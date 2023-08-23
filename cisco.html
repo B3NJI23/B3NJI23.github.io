@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coding Cheatsheet - Cisco</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="shortcut icon"
+      href="Images/python-logo.png"
+      type="image/x-icon"
+    />
+    <script src="main.js"></script>
+  </head>
+  <body>
+
+    <h1 class="cheatsheet-title">Cisco Packter Tracer Cheatsheet</h1>
+
+    <nav>
+        <ul><li><a href="index.html">Python Cheatsheet</a><img src="Images/python-logo.png" alt="python-logo" class="small-logo"></li></ul>
+        <ul><li><a href="cisco.html">Cisco Cheatsheet</a><img src="Images/cisco-logo.png" alt="cisco-logo" class="small-logo"></li></ul>
+    </nav>
+
+    <div class="code-container">
+      <div class="code-embed small">
+        <h2 class="code-title">Fontos Tippek</h2>
+        <pre class="code">
+                <code>
+
+#Fontos Tippek:
+
+- A default gateway általában mindig a fő / legközelebbi router ip címe.
+- Ha megakadsz valamiben akkor CLI --> ?
+- Ha valami nem működik próbáld meg előről / vezesd le a folyamatot visszafele.
+
+                </code>
+            </pre>
+      </div>
+
+      <div class="gap"></div>
+
+      <div class="code-container">
+        <div class="code-embed small">
+          <h2 class="code-title">DHCP</h2>
+          <pre class="code">
+                  <code>
+  
+#DHCP Létrehozása:
+
+1. Lépés --> Megynitod a megfelelő router-t.
+2. Lépés --> CLI
+3. Lépés --> DHCP Létrehozása: ip dhcp pool [tetszolegesnév]
+4. Lépés --> A célhálózat címe. PL: network --> 192.168.1.0
+5. Lépés --> Add meg a default-router-t, hogy elkerüld a kellemetlenségeket
+6. Lépés (opcionális) --> Ha kell akkor adj meg egy DNS-Server-t. PL: dns-server: 1.1.1.1
+7. Lépés --> A cél eszközökön állítsd be a DHCP-t a static helyett.
+
+#Kész is vagy!
+
+Példa a DHPC-hez.:
+
+                    ---------------------------------------------------------------------
+                    |                              CLI                                  |
+                    | Router> en                                                        |
+                    | Router# conf t                                                    |
+                    | Router (config)#ip dhcp pool tetszoleges                          |
+                    | Router (dhcp-config)#Network célhálózat célsubnetmask             |
+                    | Router (dhcp-config)#default-router főrouter                      |
+                    | Router (dhcp-config)#dns-server tetszőlegesDNS (ha kell)          |
+                    |                                                                   |
+                    | #Ha kell kihagyni ip címet:                                       |
+                    |                                                                   |
+                    | Router (config)#ip dhcp excluded address IPCímTól IPCímIg         |
+                    |                                                                   |
+                    ---------------------------------------------------------------------
+                  </code>
+              </pre>
+            </div>
+
+            <div class="gap"></div>
+      
+            <div class="code-container">
+              <div class="code-embed small">
+                <h2 class="code-title">RIP</h2>
+                <pre class="code">
+                        <code>
+      
+#Ha RIP forgalomirányítást kell használnod akkor általában a version 2-t fogják kérni.
+
+#RIP forgalomírányításnál azokat a hálózatokat kell beállítani az adott router-en
+#amik közvetlen érintik a router-t.
+
+#CLI - RIP v2 Példa:
+
+                     ---------------------------------------------------------------------
+                     |                              CLI                                  |
+                     | Router> en                                                        |
+                     | Router# conf t                                                    |
+                     | Router (config)#router rip                                        |
+                     | Router (config-router)#version 2                                  |
+                     | Router (config-router)#network tetszőlegeshálózat                 | 
+                     ---------------------------------------------------------------------
+                        </code>
+                    </pre>
+              </div>
+
+              <div class="gap"></div>
+      
+              <div class="code-container">
+                <div class="code-embed small">
+                  <h2 class="code-title">Static forgalomírányítás</h2>
+                  <pre class="code">
+                          <code>
+        
+#Ha Static forgalomirányítást kell használnod akkor manuálisan megkell mondani 
+#minden router-nek, hogy melyik ip-címre hogyan reagáljon.
+
+#Szöveges példa:
+
+    Ha router1 --> FastEthernet 0/0 - 192.168.1.1 | Serial 0/0/0 - 10.10.10.1
+    Ha router2 --> FastEtherner 0/0 - 192.158.2.1 | Serial 0/0/0 - 10.10.10.2
+
+    Ha PC1 --> FastEthernet 0/0 - 192.168.1.254
+    Ha PC2 --> FastEthernet 0/0 - 192.168.2.254
+
+    Akkor: A router1-nek meg kell adni, hogy hogyan tudja elérni a 192.168.2.0 című hálózatot.
+    Akkor: A router2-nek szintugy, csak fordítva.
+
+    #Static CLI Példa:
+
+    #Router1:
+
+                     elérni kívánt hálózat    subnet mask     az ip cím ami alapján eljuthat a cél hálózathoz.
+                               ⬇                   ⬇                                ⬇
+#Példa parancs: ip route    192.168.2.0      255.255.255.0                      10.10.10.2
+
+                    ---------------------------------------------------------------------
+                    |                              CLI  (Router1)                       |
+                    | Router> en                                                        |
+                    | Router# conf t                                                    |
+                    | Router (config)#ip route 192.168.2.0 255.255.255.0 10.10.10.2     |
+                    ---------------------------------------------------------------------
+
+                    ---------------------------------------------------------------------
+                    |                              CLI  (Router2)                       |
+                    | Router> en                                                        |
+                    | Router# conf t                                                    |
+                    | Router (config)#ip route 192.168.1.0 255.255.255.0 10.10.10.1     |
+                    ---------------------------------------------------------------------
+                          </code>
+                      </pre>
+                </div>
+
+                <div class="gap"></div>
+      
+                <div class="code-container">
+                  <div class="code-embed small">
+                    <h2 class="code-title">Telnet Protokoll</h2>
+                    <pre class="code">
+                            <code>
+
+#Telnet Beállítása Router-en:
+
+#Példa:
+
+Ha router1 --> FastEthernet 0/0 - 192.168.1.1
+Ha PC1 --> FastEthernet 0/0 - 192.168.1.254
+
+#Telnet protokoll lényege / fogalma. Ha karbantartást kell végezni a hálozaton telnet-en keresztül
+akár távólról is el lehessen érni egy router CLI-jét.
+
+Fogalma: Távoli CLI
+
+Ahhoz, hogy telnet protokoll-al elérd a router1-et a PC1-ről ahhoz CLI-ben be kell állítani egy-egy jelszavat.
+
+1. Jelszó: Maga a CLI jelszava (az enable parancshoz.)
+2. Jelszó: A telnet protokoll saját jelszva (felcsatlakozáskor lép érvénybe.)
+
+                      ---------------------------------------------------------------------
+                      |                            CLI  (Router1)                         |
+                      | Router> en                                                        |
+                      | Router# conf t                                                    |
+                      | Router (config)#enable password tetszőlegesJelszó                 |
+                      |                                                                   |
+                      | #Telnet beállítása:                                               |
+                      |                                                                   |
+                      | Router> en                                                        |
+                      | Router# conf t                                                    |
+                      | Router (config)#line vty 0 15                                     |
+                      | Router (config-line)# password tetszolegesJelszó                  |
+                      | Router (config-line)# login                                       |
+                      ---------------------------------------------------------------------
+
+                      ---------------------------------------------------------------------
+                      |                    CMD (Command Prompt) (PC1)                     |
+                      |                                                                   |
+                      | Cisco Packet Tracer PC Command Line 1.0                           |
+                      | C:\> telnet tetszőlegesrouterIPCím                                |
+                      |                                                                   |
+                      | User Access Verification                                          |
+                      |                                                                   |
+                      | Password: (nem fogod látni, de add meg a jelszavat)               |
+                      | Router> en                                                        |
+                      | Password: (nem fogod látni, de add meg a jelszavat)               |
+                      | Router# exit (ha be engedett kiléphetsz, működik.)                |
+                      | [Connection to IP closed by foriegn host]                          |
+                      ---------------------------------------------------------------------
+                            </code>
+                        </pre>
+                  </div>
+            
+                  <div class="gap"></div>
+      
+                  <div class="code-container">
+                    <div class="code-embed small">
+                      <h2 class="code-title">FTP Server Beállítása</h2>
+                      <pre class="code">
+                              <code>
+  
+#FPT Server Beállítása:
+
+#A Services kategóriában legyen az FPT Service: ON🔘
+                                
+#User setup:
+                                
+                                
+           ╔------------------------------------------------╗
+Username:  | Adj meg egy tetszolegesNevet                   |
+           ╚------------------------------------------------╝
+                                
+           ╔------------------------------------------------╗
+Password:  | Adj meg egy tetszolegesJelszavat               |
+           ╚------------------------------------------------╝
+                                
+#Pipáld be azokat az engedélyeket amiket kaphat a felhasználó:
+                                
+#Példa:
+                                
+           ╔------------------------------------------------╗
+Username:  | Admin                                          |
+           ╚------------------------------------------------╝
+                                
+           ╔------------------------------------------------╗
+Password:  | Admin                                          | 
+           ╚------------------------------------------------╝
+                                
+#Engedélyek: ☑ Write   ☑ Read   ☑ Delete   ☑ Rename   ☑ List
+                                
+Az FPT Server-t ugyanúgy tudod elérni, mint a telnet protokollal.:
+                                
+#FTP Példa:
+
+                      ---------------------------------------------------------------------
+                      |                    CMD (Command Prompt) (PC1)                     |
+                      |                                                                   |
+                      | Cisco Packet Tracer PC Command Line 1.0                           |
+                      | C:\> ftp tetszolegesIPCím                                         |
+                      |                                                                   |
+                      | Trying to connect...IP                                            |
+                      | Connected to IP                                                   |
+                      | 220- Welcome to PT Ftp Server                                     |
+                      | Username: tetszolegesNev                                          |
+                      | 331- Username ok, need password                                   |
+                      | Password: (nem fogod látni, de add meg a jelszavat)               |
+                      | 230- Logged in (Siker!!!)                                         |
+                      ---------------------------------------------------------------------
+
+#Fontos FTP Parancs magyarázatok:
+
+- cd --> Lépkedhetsz a mappák között a szerveren.
+- delete --> Kitörölhetsz egy fájl-t az FPT szerverről.
+- dir --> Megjeleníti a jelenlegi mappában lévő elemeket.
+- get --> Le tudsz tölteni egy fájl-t a szerverről.
+- help --> Megjeleníti a parancsokat.
+- put --> Fel tölthetsz egy file-t az FTP szerverre.
+- quit --> Le csatlakoztat az FTP szerverről.
+- rename --> Átnevezhetsz egy fájl-t az FTP Szerveren.
+
+                              </code>
+                          </pre>
+                    </div>              
+
+    <footer>
+        <h3>További fontos infók / linkek: </h3>
+        <p>ChatGPT: <a href="https://chat.openai.com/", target="_blank">https://chat.openai.com/</a></p>
+        <p>learnpython.org: <a href="https://www.learnpython.org/" target="_blank">https://www.learnpython.org/</a></p>
+    </footer>
+  </body>
+</html>
